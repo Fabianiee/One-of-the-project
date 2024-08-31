@@ -9,7 +9,7 @@ import static org.apache.http.HttpStatus.SC_NOT_FOUND;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 
-public class Login_CourierTest {
+public class LoginCourierTest {
     CourierRequest courierRequest = new CourierRequest();
     Courier courier = new Courier ("fast_n_furious","798465132");
 

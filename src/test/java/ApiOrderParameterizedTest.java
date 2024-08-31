@@ -9,20 +9,17 @@ import static org.apache.http.HttpStatus.SC_CREATED;
 import static org.hamcrest.CoreMatchers.notNullValue;
 
 @RunWith(Parameterized.class)
-public class API_OrderParameterizedTest {
+public class ApiOrderParameterizedTest {
     private final Order order;
+    private OrderRequest orderRequest = new OrderRequest();
 
-    public API_OrderParameterizedTest(Order order) {
+    public ApiOrderParameterizedTest(Order order) {
         this.order = order;
     }
 
     @Before
     public void setUp() {
-               try {
-            orderRequest.setUp();
-        } catch (Exception e) {
-            System.out.println("Error in setup: " + e.getMessage());
-        }
+        orderRequest.setUp();
     }
 
     @Parameterized.Parameters
@@ -35,20 +32,19 @@ public class API_OrderParameterizedTest {
         };
     }
 
-    OrderRequest orderRequest = new OrderRequest();
-
     @Test
     @DisplayName("Создание заказа самоката с разным цветом")
     @Description("Проверка создания заказа самоката с разным цветом")
     public void checkCreateOrder() {
-        try {
             orderRequest.setOrder(order);
             orderRequest.createOrderRequest()
                     .then().statusCode(SC_CREATED)
                     .and()
                     .assertThat().body("track", notNullValue());
-        } catch (Exception e) {
-            System.out.println("Error in creating order: " + e.getMessage());
         }
     }
-}
+
+
+
+
+

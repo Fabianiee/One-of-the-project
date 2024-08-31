@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.equalTo;
 
 
-public class API_CreateCourierTest {
+public class ApiCreateCourierTest {
     private static final String COURIER_URL = "https://qa-scooter.praktikum-services.ru/couriers";
     Courier courier = new Courier("fast_and_furious", "798465132");
     CourierRequest courierRequest = new CourierRequest();
